@@ -1,0 +1,21 @@
+﻿<Application x:Class="RatingAppWPFProject.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:RatingAppWPFProject"
+             StartupUri="View\Windows\MainUIApplication.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources\Style\BorderStyleDictionary.xaml"/>
+                <ResourceDictionary Source="Resources\Style\TextBlockStyleDictionary.xaml"/>
+                <ResourceDictionary Source="Resources\Style\ButtonStyleDictionary.xaml"/>
+                <ResourceDictionary Source="Resources\Style\TextBoxStyleDictionary.xaml"/>
+                <ResourceDictionary Source="Resources\Style\TabControlStyleDictionary.xaml"/>
+                <ResourceDictionary Source="Resources\Style\RegistrationBTNStyleDictionary.xaml"/>
+                <ResourceDictionary Source="Resources\Style\RegistrationCheckBoxStyleDictionary.xaml"/>
+                <ResourceDictionary Source="Resources\Style\RegistrationTBStyleDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

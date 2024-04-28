@@ -1,0 +1,44 @@
+﻿<Window x:Class="RatingAppWPFProject.View.Windows.LoginUserWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+         xmlns:vm="clr-namespace:RatingAppWPFProject.ViewModel"
+        xmlns:local="clr-namespace:RatingAppWPFProject.View.Windows"
+        mc:Ignorable="d"
+        Title="LoginUserWindow" Height="150" Width="450" AllowsTransparency="True"
+        Background="Transparent"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        SizeToContent="WidthAndHeight">
+
+        <Border Style="{StaticResource BorderStyle}" Height="150" Width="450">
+        <Border.DataContext>
+            <vm:LoginUserViewModel/>
+        </Border.DataContext>
+
+        <StackPanel Margin="10" Orientation="Vertical">
+            <StackPanel Orientation="Vertical">
+                <TextBlock Text="ЛОГИН" Style="{StaticResource TextBlockStyle}"/>
+                <TextBox Text="{Binding UserLogin}" Style="{StaticResource TextBoxStyle}"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical">
+                <TextBlock Text="ПАРОЛЬ" Style="{StaticResource TextBlockStyle}"/>
+                <TextBox Text="{Binding UserPassword}" Style="{StaticResource TextBoxStyle}"/>
+            </StackPanel>
+            <Border Padding="0 10">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <Button Grid.Column="1" Command="{Binding LoginUserCommand}" Content="ВОЙТИ" Style="{StaticResource BaseButtonStyle}"/>
+                    <Button Grid.Column="3" Command="{Binding RegisterUserCommand}" Content="РЕГИСТРАЦИЯ" Style="{StaticResource BaseButtonStyle}"/>
+                </Grid>
+            </Border>
+        </StackPanel>
+    </Border>       
+</Window>

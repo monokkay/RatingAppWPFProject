@@ -1,0 +1,69 @@
+﻿<Window x:Class="RatingAppWPFProject.View.Windows.MainUIApplication"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+         xmlns:vm="clr-namespace:RatingAppWPFProject.ViewModel"
+        xmlns:local="clr-namespace:RatingAppWPFProject.View.Windows"
+        mc:Ignorable="d"
+            Title="MainUIApplication" Height="450" Width="800"
+        WindowStyle="None">
+    <DockPanel Background="#015478">
+
+        <DockPanel.DataContext>
+            <vm:LoginUserViewModel/>
+        </DockPanel.DataContext>
+        <Grid Background="#015478" DockPanel.Dock="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Style="{StaticResource RoundedBTNStyle}" Grid.Column="1">
+                <Button.Content>
+                    <!--<Image Source="/Resources/Assets/icons8-macos-свернуть-30.png"/>-->
+                    -
+                </Button.Content>
+            </Button>
+
+            <Button Command="{Binding CloseWindowCommand}" Style="{StaticResource RoundedBTNStyle}" Grid.Column="2">
+                <Button.Content>
+                    <!--<Image
+        Source="/Resources/Assets/icons8-macos-закрыть-30.png"/>-->
+                    Х
+                </Button.Content>
+            </Button>
+        </Grid>
+
+        <TabControl BorderBrush="#FF01587D" BorderThickness="0" DockPanel.Dock="Top" Style="{StaticResource ResourceKey=BaseTabControlStyle}" TabStripPlacement="Left" Foreground="#FF015478">
+            <TabItem Background="#015478" BorderThickness="0" Header="Главная" Style="{StaticResource BaseTabItemStyle}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1"/>
+                        <ColumnDefinition Width="1"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                </Grid>
+
+                <!--КАРТЫ ГУГЛ-->
+
+
+            </TabItem>
+
+
+            <TabItem Selector.IsSelected="True" Header="Настройки" Style="{StaticResource BaseTabItemStyle}">
+
+                <Border Style="{StaticResource BorderStyle}">
+                    <StackPanel>
+                        <TextBlock Text="ЛОГИН" Style="{StaticResource TextBlockStyle}"/>
+                        <TextBox Style="{StaticResource TextBoxStyle}"/>
+                        <TextBlock Text="ПАРОЛЬ" Style="{StaticResource TextBlockStyle}"/>
+                        <TextBox Style="{StaticResource TextBoxStyle}"/>
+                        <Button Width="250" Height="35" Margin="20" Content="СОХРАНИТЬ" Style="{StaticResource BaseButtonStyle}"/>
+                    </StackPanel>
+                </Border>
+            </TabItem>
+        </TabControl>
+    </DockPanel>
+</Window>
